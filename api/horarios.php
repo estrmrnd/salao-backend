@@ -16,7 +16,9 @@ if (!$profissional_id || !$data) {
 
 $pdo = conectar();
 
-$dia_semana = date('w', strtotime($data));
+// Converte para 1=seg, 2=ter, 3=qua, 4=qui, 5=sex, 6=sab, 7=dom
+// igual ao padrão ISO que parece estar no seu banco
+$dia_semana = date('N', strtotime($data));
 
 $horario = $pdo->prepare("
     SELECT inicio, fim 
