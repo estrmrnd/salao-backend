@@ -124,7 +124,7 @@ if ($metodo === 'POST') {
                 "X-Mailer: PHP/" . phpversion(),
             ]);
 
-            mail($admin['email'], $assunto, $corpo, $headers);
+            @mail($admin['email'], $assunto, $corpo, $headers);
         }
     }
 
